@@ -1,0 +1,5 @@
+YELL_CHAT_FORMAT: "&b%player% &7&oyells: &b%chat%"
+YELL_CHAT_RADIUS: 25
+WHISPER_CHAT_FORMAT: "&b%player% &7&owhispers: &b%chat%"
+WHISPER_CHAT_RADIUS: 1
+NO_PERMISSION: "&cYou dont have permission to perform this command."

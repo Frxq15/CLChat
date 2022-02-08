@@ -1,0 +1,10 @@
+name: CLChat
+version: '${project.version}'
+main: me.frxq15.citylifechat.CityLifeChat
+api-version: 1.18
+authors: [ Frxq15 ]
+
+commands:
+  yell:
+    description: yell command
+    aliases: [y, yc, yellchat]
