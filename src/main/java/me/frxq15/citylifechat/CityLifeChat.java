@@ -1,6 +1,7 @@
 package me.frxq15.citylifechat;
 
 import me.frxq15.citylifechat.Commands.YellCommand;
+import me.frxq15.citylifechat.Managers.ChatManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,6 +18,9 @@ public final class CityLifeChat extends JavaPlugin {
     }
     void registry() {
         getCommand("yell").setExecutor(new YellCommand());
+        if(Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+            Bukkit.getPluginManager().registerEvents(new ChatManager(), this);
+        }
     }
 
     @Override
