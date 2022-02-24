@@ -11,3 +11,9 @@ commands:
   whisper:
     description: whisper command
     aliases: [w]
+  global:
+    description: global command
+    aliases: [g, globalchat, gc]
+  twitter:
+    description: twitter command
+    aliases: [tc, twitterchat]

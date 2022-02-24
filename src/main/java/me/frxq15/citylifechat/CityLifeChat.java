@@ -1,6 +1,9 @@
 package me.frxq15.citylifechat;
 
+import me.frxq15.citylifechat.Commands.TwitterCommand;
+import me.frxq15.citylifechat.Commands.WhisperCommand;
 import me.frxq15.citylifechat.Commands.YellCommand;
+import me.frxq15.citylifechat.Commands.globalCommand;
 import me.frxq15.citylifechat.Managers.ChatManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -18,14 +21,16 @@ public final class CityLifeChat extends JavaPlugin {
     }
     void registry() {
         getCommand("yell").setExecutor(new YellCommand());
+        getCommand("twitter").setExecutor(new TwitterCommand());
+        getCommand("whisper").setExecutor(new WhisperCommand());
+        getCommand("global").setExecutor(new globalCommand());
         if(Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             Bukkit.getPluginManager().registerEvents(new ChatManager(), this);
         }
     }
 
     @Override
-    public void onDisable() {
-    }
+    public void onDisable() { }
     public static CityLifeChat getInstance() { return instance; }
     public static String colourize(String input) {
         return ChatColor.translateAlternateColorCodes('&', input);

@@ -2,4 +2,6 @@ YELL_CHAT_FORMAT: "&b%player% &7&oyells: &b%chat%"
 YELL_CHAT_RADIUS: 25
 WHISPER_CHAT_FORMAT: "&b%player% &7&owhispers: &b%chat%"
 WHISPER_CHAT_RADIUS: 1
+TWITTER_CHAT_FORMAT: "&7(Twitter) &b%player%&7: &b%chat%"
+GLOBAL_CHAT_FORMAT: "&b%player%&7: &b%chat%"
 NO_PERMISSION: "&cYou dont have permission to perform this command."

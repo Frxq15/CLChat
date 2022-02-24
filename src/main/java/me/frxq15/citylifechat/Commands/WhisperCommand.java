@@ -1,5 +1,6 @@
 package me.frxq15.citylifechat.Commands;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.frxq15.citylifechat.CityLifeChat;
 import me.frxq15.citylifechat.Managers.RadiusManager;
 import org.bukkit.command.Command;
@@ -24,9 +25,11 @@ public class WhisperCommand implements CommandExecutor {
         }
         final String message = this.getFinalArg(args, 0);
         RadiusManager.getNearbyPlayers(p, CityLifeChat.getInstance().getConfig().getDouble("WHISPER_CHAT_RADIUS")).forEach(r -> {
-            r.sendMessage(CityLifeChat.formatMsg("WHISPER_CHAT_FORMAT").replace("%player%", p.getName()).replace("%chat%", message));
+            String pmessage = PlaceholderAPI.setPlaceholders(p, CityLifeChat.formatMsg("WHISPER_CHAT_FORMAT").replace("%player%", p.getName()).replace("%chat%", message));
+            r.sendMessage(CityLifeChat.colourize(pmessage));
         });
-        p.sendMessage(CityLifeChat.formatMsg("WHISPER_CHAT_FORMAT").replace("%player%", p.getName()).replace("%chat%", message));
+        String pmessage = PlaceholderAPI.setPlaceholders(p, CityLifeChat.formatMsg("WHISPER_CHAT_FORMAT").replace("%player%", p.getName()).replace("%chat%", message));
+        p.sendMessage(CityLifeChat.colourize(pmessage));
         return true;
     }
     private String getFinalArg(final String[] args, final int start) {
